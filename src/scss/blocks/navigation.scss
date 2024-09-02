@@ -1,0 +1,16 @@
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @media (max-width: 1440px) {
+    gap: 12px;
+  }
+
+  .nav__link {
+    @media (max-width: 1440px) {
+      font-size: 12px !important;
+    }
+  }
+
+}

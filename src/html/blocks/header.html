@@ -1,2 +1,34 @@
-<header class="header"></header>
-@@include('mobile-nav.html')
+<!-- При ховере на кнопку бургера добавлять класс text-animation -->
+
+<header class="header">
+	<div class="container">
+		<div class="header__wrapper">
+			<div class="header__content header-content">
+				<div class="header-content__logo">
+					@@include('logo.html')
+				</div>
+				<div class="header-content__navigation">
+					@@include('navigation.html')
+				</div>
+			</div>
+			<div class="header__info header-info">
+				<div class="header-info__burger header-info-burger">
+					<button id="burger-menu-btn" class="header-info-burger__btn">
+						<img src="../../img/burger-menu.svg" alt="Мобильное меню" />
+						<div class="header-info-burger__text-box" data-link-alt="МЕНЮ">
+							<span class="header-info-burger__text">Меню</span>
+						</div>
+					</button>
+				</div>
+				<a href="#" class="header-info__lk">
+					<span class="header-info__name">геннадий П.</span>
+					<img
+						class="header-info__avatar"
+						src="../../img/lk-icon.svg"
+						alt="Аватар пользователя"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
