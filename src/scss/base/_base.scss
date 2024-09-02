@@ -8,4 +8,20 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: DrukBold;
+	overflow-x: hidden;
+}
+
+a,
+span,
+button,
+h1,
+h2,
+h3,
+h4 {
+	text-transform: uppercase;
+}
+
+button,
+a {
+	transition: all .12s ease-in-out;
 }
