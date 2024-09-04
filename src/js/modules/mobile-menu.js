@@ -5,18 +5,18 @@ const burgerMenuButtonTextElement = document.querySelector(
 );
 const burgerMenuButtonMobile = document.querySelector('.burger-menu-btn');
 
-burgerMenuButton.addEventListener('click', () => {
-	mobileMenu.classList.toggle('open');
-	if (mobileMenu.classList.contains('open')) {
-		burgerMenuButtonTextElement.textContent = 'ЗАКРЫТЬ';
-	} else {
-		burgerMenuButtonTextElement.textContent = 'МЕНЮ';
-	}
-});
+export const mobileMenuSwitcher = () => {
+	burgerMenuButton.addEventListener('click', () => {
+		mobileMenu.classList.toggle('open');
+		if (mobileMenu.classList.contains('open')) {
+			burgerMenuButtonTextElement.textContent = 'ЗАКРЫТЬ';
+		} else {
+			burgerMenuButtonTextElement.textContent = 'МЕНЮ';
+		}
+	});
 
-burgerMenuButtonMobile.addEventListener('click', () => {
-	mobileMenu.classList.toggle('open');
-	burgerMenuButtonMobile.classList.toggle('active');
-});
-
-export const mobileMenuSwitecher = () => {};
+	burgerMenuButtonMobile.addEventListener('click', () => {
+		mobileMenu.classList.toggle('open');
+		burgerMenuButtonMobile.classList.toggle('active');
+	});
+};

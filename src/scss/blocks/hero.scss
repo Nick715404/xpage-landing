@@ -5,6 +5,23 @@
     margin-bottom: 42px;
   }
 
+  &__title-box {
+    position: relative;
+  }
+
+  .visible-text,
+  .invisible-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .invisible-text {
+    visibility: hidden;
+    /* Текст невидим, но занимает место */
+  }
+
   &__wrapper {
     position: relative;
     border-radius: 20px;
@@ -34,6 +51,7 @@
     color: #fff;
     font-size: clamp(1.625rem, 0.95rem + 3.385vw, 5rem);
     margin-bottom: 48px;
+    max-width: 75%;
 
     @media (max-width: 768px) {
       margin-bottom: 12px;
