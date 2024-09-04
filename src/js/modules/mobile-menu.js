@@ -4,6 +4,7 @@ const burgerMenuButtonTextElement = document.querySelector(
 	'.header-info-burger__text'
 );
 const burgerMenuButtonMobile = document.querySelector('.burger-menu-btn');
+const navLinks = document.querySelectorAll('.nav__link');
 
 export const mobileMenuSwitcher = () => {
 	burgerMenuButton.addEventListener('click', () => {
@@ -19,4 +20,10 @@ export const mobileMenuSwitcher = () => {
 		mobileMenu.classList.toggle('open');
 		burgerMenuButtonMobile.classList.toggle('active');
 	});
+
+	navLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			mobileMenu.classList.remove('open');
+		})
+	})
 };

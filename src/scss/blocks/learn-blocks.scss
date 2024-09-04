@@ -19,6 +19,7 @@
     max-height: 611px;
     aspect-ratio: 1.25 / 1;
     position: relative;
+    transition: all .2s ease;
 
     @media (max-width: 1024px) {
       aspect-ratio: 4 / 1;
@@ -42,6 +43,7 @@
   #unit-coach {
     max-height: 294px;
     aspect-ratio: 0.9 / 1;
+    transition: all .2s ease;
 
     @media (max-width: 1024px) {
       aspect-ratio: 4 / 1;
