@@ -71,15 +71,16 @@
 
   &__blocks {
     width: 70%;
-    // max-width: 1195px;
+    display: flex;
   }
 
   &__resources {
+    display: flex;
     width: 35%;
-    // min-width: 520px;
     max-width: 614px;
     border-left: 1px solid #C4C4C4;
     padding-left: 16px;
+    min-width: 470px;
   }
 
 }

@@ -1,6 +1,7 @@
 .resources {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 
   .resources-item {
     margin-bottom: 20px;
@@ -137,8 +138,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: red;
-    max-height: 284px;
+    flex-grow: 2;
   }
 
 }
