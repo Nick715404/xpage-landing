@@ -1,24 +1,26 @@
 const header = document.querySelector('.header');
 const headerMobile = document.querySelector('.header-mobile');
-let lastScroll = 0;
-const defaultOffset = 500;
+const mobileMenu = document.querySelector('.mobile-menu__wrapper');
 
 const containHide = () => header.classList.contains('hide');
-const scrollPostition = () =>
-	window.pageYOffset || document.documentElement.scrollTop;
+const scrollPostition = () => {
+	return window.pageYOffset || document.documentElement.scrollTop;
+};
 
 export const hidingHeader = () => {
+	let lastScroll = 0;
+	const defaultOffset = 500;
+
 	window.addEventListener('scroll', () => {
 		if (
 			scrollPostition() > lastScroll &&
 			!containHide() &&
-			scrollPostition() > defaultOffset
+			scrollPostition() > defaultOffset &&
+			!mobileMenu.classList.contains('open')
 		) {
-			// scroll down
 			header.classList.add('hide');
 			headerMobile.classList.add('hide');
 		} else if (scrollPostition() < lastScroll && containHide()) {
-			// scroll up
 			header.classList.remove('hide');
 			headerMobile.classList.remove('hide');
 		}
