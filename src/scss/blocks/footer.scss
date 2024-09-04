@@ -1,0 +1,42 @@
+.footer {
+  position: relative;
+
+  &__wrapper {
+    border-top: 1px solid #202020;
+    padding-top: 35px;
+    max-height: 655px;
+    aspect-ratio: 0.5 / 1;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: clamp(1.25rem, 0.9rem + 1.75vw, 3rem);
+    margin-bottom: 32px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 37px;
+  }
+
+  &__sign {
+    position: absolute;
+    bottom: 38px;
+    left: 20px;
+
+    @media (max-width: 1024px) {
+      left: 12px;
+    }
+
+  }
+
+  &-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36%;
+    max-width: 991px;
+    height: auto;
+  }
+
+}
