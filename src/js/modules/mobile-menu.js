@@ -24,6 +24,7 @@ export const mobileMenuSwitcher = () => {
 	navLinks.forEach(link => {
 		link.addEventListener('click', () => {
 			mobileMenu.classList.remove('open');
-		})
-	})
+			burgerMenuButtonTextElement.textContent = 'МЕНЮ';
+		});
+	});
 };
