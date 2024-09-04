@@ -1,1 +1,1 @@
-!function(){"use strict";console.log("start")}();
+!function(){"use strict";const e=document.getElementById("burger-menu-btn"),t=document.querySelector(".mobile-menu__wrapper"),n=document.querySelector(".header-info-burger__text"),o=document.querySelector(".burger-menu-btn");e.addEventListener("click",(()=>{t.classList.toggle("open"),t.classList.contains("open")?n.textContent="ЗАКРЫТЬ":n.textContent="МЕНЮ"})),o.addEventListener("click",(()=>{t.classList.toggle("open"),o.classList.toggle("active")})),document.addEventListener("DOMContentLoaded",(()=>{}))}();

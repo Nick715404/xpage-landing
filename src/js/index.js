@@ -1,3 +1,5 @@
-import { test } from './modules/mobile-nav.js';
+import { mobileMenuSwitecher } from './modules/mobile-menu.js';
 
-test();
+document.addEventListener('DOMContentLoaded', () => {
+	mobileMenuSwitecher();
+});
