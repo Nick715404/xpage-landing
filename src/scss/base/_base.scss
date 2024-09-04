@@ -11,6 +11,24 @@ body {
 	overflow-x: hidden;
 }
 
+main {
+	flex-grow: 1;
+	margin-top: 108px;
+
+	@media (max-width: 1024px) {
+		margin-top: 90px;
+	}
+
+	@media (max-width: 768px) {
+		margin-top: 90px;
+	}
+
+	@media (max-width: 426px) {
+		margin-top: 68px;
+	}
+
+}
+
 a,
 span,
 button,
