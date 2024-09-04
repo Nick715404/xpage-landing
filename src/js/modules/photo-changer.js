@@ -11,7 +11,7 @@ const changePhoto = button => {
 	});
 
 	button.addEventListener('mouseleave', function() {
-		imgElement.src = '../../img/3.webp';
+		imgElement.src = './img/3.webp';
 		pageTitle.textContent = 'Найди с кем поиграть в баскет';
 	});
 };
