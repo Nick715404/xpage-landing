@@ -10,6 +10,11 @@
     border-bottom: 1px solid #C4C4C4;
   }
 
+  @media (max-width: 768px) {
+    flex-grow: unset;
+    width: 100%;
+  }
+
   #unit-banner {
     max-height: 611px;
     aspect-ratio: 1.25 / 1;
@@ -59,6 +64,8 @@
     @media (max-width: 768px) {
       padding: 12px;
       border-radius: 10px;
+      flex-grow: unset;
+      width: 100%;
     }
 
     &__background {
