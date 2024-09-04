@@ -12,6 +12,7 @@ const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
+const cleanCSS = require('clean-css');
 // const webImagesCSS = require('gulp-web-images-css');  //Вывод WEBP-изображений
 
 const server = require('gulp-server-livereload');
@@ -33,11 +34,9 @@ const rename = require('gulp-rename');
 // SVG
 const svgsprite = require('gulp-svg-sprite');
 
-gulp.task('clean:docs', function (done) {
+gulp.task('clean:docs', function(done) {
 	if (fs.existsSync('./docs/')) {
-		return gulp
-			.src('./docs/', { read: false })
-			.pipe(clean({ force: true }));
+		return gulp.src('./docs/', { read: false }).pipe(clean({ force: true }));
 	}
 	done();
 });
@@ -47,7 +46,7 @@ const fileIncludeSetting = {
 	basepath: '@file',
 };
 
-const plumberNotify = (title) => {
+const plumberNotify = title => {
 	return {
 		errorHandler: notify.onError({
 			title: title,
@@ -57,7 +56,7 @@ const plumberNotify = (title) => {
 	};
 };
 
-gulp.task('html:docs', function () {
+gulp.task('html:docs', function() {
 	return (
 		gulp
 			// .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
@@ -71,9 +70,7 @@ gulp.task('html:docs', function () {
 			.pipe(fileInclude(fileIncludeSetting))
 			.pipe(
 				replace(/<img(?:.|\n|\r)*?>/g, function(match) {
-					return match
-						.replace(/\r?\n|\r/g, '')
-						.replace(/\s{2,}/g, ' ');
+					return match.replace(/\r?\n|\r/g, '').replace(/\s{2,}/g, ' ');
 				})
 			) //удаляет лишние пробелы и переводы строк внутри тега <img>
 			.pipe(
@@ -106,7 +103,7 @@ gulp.task('html:docs', function () {
 	);
 });
 
-gulp.task('sass:docs', function () {
+gulp.task('sass:docs', function() {
 	return (
 		gulp
 			.src('./src/scss/*.scss')
@@ -134,34 +131,32 @@ gulp.task('sass:docs', function () {
 	);
 });
 
-gulp.task('images:docs', function () {
-	return (
-		gulp
-			.src(['./src/img/**/*', '!./src/img/svgicons/**/*'])
-			.pipe(changed('./docs/img/'))
-			.pipe(
-				imagemin([
-					imageminWebp({
-						quality: 85,
-					}),
-				])
+gulp.task('images:docs', function() {
+	return gulp
+		.src(['./src/img/**/*', '!./src/img/svgicons/**/*'])
+		.pipe(changed('./docs/img/'))
+		.pipe(
+			imagemin([
+				imageminWebp({
+					quality: 85,
+				}),
+			])
+		)
+		.pipe(rename({ extname: '.webp' }))
+		.pipe(gulp.dest('./docs/img/'))
+		.pipe(gulp.src('./src/img/**/*'))
+		.pipe(changed('./docs/img/'))
+		.pipe(
+			imagemin(
+				[
+					imagemin.gifsicle({ interlaced: true }),
+					imagemin.mozjpeg({ quality: 85, progressive: true }),
+					imagemin.optipng({ optimizationLevel: 5 }),
+				],
+				{ verbose: true }
 			)
-			.pipe(rename({ extname: '.webp' }))
-			.pipe(gulp.dest('./docs/img/'))
-			.pipe(gulp.src('./src/img/**/*'))
-			.pipe(changed('./docs/img/'))
-			.pipe(
-				imagemin(
-					[
-						imagemin.gifsicle({ interlaced: true }),
-						imagemin.mozjpeg({ quality: 85, progressive: true }),
-						imagemin.optipng({ optimizationLevel: 5 }),
-					],
-					{ verbose: true }
-				)
-			)
-			.pipe(gulp.dest('./docs/img/'))
-	);
+		)
+		.pipe(gulp.dest('./docs/img/'));
 });
 
 const svgStack = {
@@ -196,7 +191,7 @@ const svgSymbol = {
 	},
 };
 
-gulp.task('svgStack:docs', function () {
+gulp.task('svgStack:docs', function() {
 	return gulp
 		.src('./src/img/svgicons/**/*.svg')
 		.pipe(plumber(plumberNotify('SVG:dev')))
@@ -204,7 +199,7 @@ gulp.task('svgStack:docs', function () {
 		.pipe(gulp.dest('./docs/img/svgsprite/'));
 });
 
-gulp.task('svgSymbol:docs', function () {
+gulp.task('svgSymbol:docs', function() {
 	return gulp
 		.src('./src/img/svgicons/**/*.svg')
 		.pipe(plumber(plumberNotify('SVG:dev')))
@@ -212,14 +207,14 @@ gulp.task('svgSymbol:docs', function () {
 		.pipe(gulp.dest('./docs/img/svgsprite/'));
 });
 
-gulp.task('files:docs', function () {
+gulp.task('files:docs', function() {
 	return gulp
 		.src('./src/files/**/*')
 		.pipe(changed('./docs/files/'))
 		.pipe(gulp.dest('./docs/files/'));
 });
 
-gulp.task('js:docs', function () {
+gulp.task('js:docs', function() {
 	return gulp
 		.src('./src/js/*.js')
 		.pipe(changed('./docs/js/'))
@@ -234,6 +229,6 @@ const serverOptions = {
 	open: true,
 };
 
-gulp.task('server:docs', function () {
+gulp.task('server:docs', function() {
 	return gulp.src('./docs/').pipe(server(serverOptions));
 });
