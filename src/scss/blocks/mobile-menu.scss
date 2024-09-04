@@ -34,7 +34,7 @@
     }
 
     @media (max-width: 425px) {
-      top: 73px;
+      top: 68px;
     }
 
   }
@@ -104,7 +104,7 @@
     }
 
     &__link {
-      font-size: clamp(1.625rem, 0.95rem + 3.385vw, 5rem) !important;
+      font-size: clamp(1.225rem, 0.95rem + 2.385vw, 5rem) !important;
     }
 
   }
