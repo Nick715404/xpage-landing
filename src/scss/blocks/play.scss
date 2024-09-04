@@ -25,6 +25,9 @@
       width: 170px;
       height: 20px;
 
+      @media (max-width: 768px) {
+        width: fit-content;
+      }
 
       &::after {
         content: '';
@@ -37,6 +40,11 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+
       }
 
       .play__link {
@@ -47,6 +55,11 @@
         flex-grow: unset;
         margin-bottom: 12px;
         color: var(--color-accent);
+
+        @media (max-width: 768px) {
+          position: relative;
+        }
+
       }
 
     }
@@ -90,7 +103,7 @@
 
     @media (max-width: 490px) {
       min-height: 470px;
-      aspect-ratio: 0.82 / 1;
+      aspect-ratio: 0.76 / 1;
     }
 
     &:hover {

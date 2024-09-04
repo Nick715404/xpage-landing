@@ -138,9 +138,15 @@
   #unit-banner,
   #unit-coach {
     @media (max-width: 768px) {
+      max-height: 560px;
+      aspect-ratio: 0.6 / 1;
+    }
+
+    @media (max-width: 375px) {
       max-height: 400px;
       aspect-ratio: 0.7 / 1;
     }
+
   }
 
 }
