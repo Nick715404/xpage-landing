@@ -29,10 +29,18 @@
 	@@include('qr-code.html')
 	<div class="footer__background footer-bg">
 		<picture class="footer-bg__picture">
+			<source
+				media="(max-width: 490px)"
+				srcset="../../img/foorer-ball-mobukd.webp"
+			/>
+			<source
+				media="(max-width: 320px) and (max-width: 768px)"
+				srcset="../../img/ foorer-ball-mobukd.webp"
+			/>
 			<img
 				class="footer-bg__image"
 				src="../../img/footer-ball.webp"
-				srcset="../../img/footer-ball.webp"
+				srcset=""
 				alt=""
 			/>
 		</picture>

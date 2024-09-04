@@ -1,18 +1,27 @@
 .qr-code {
   position: absolute;
   top: 65px;
-  right: 16%;
+  right: clamp(5%, 15vw, 16%);
   z-index: 2;
   background-color: #fff;
   max-width: 352px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: space-between;
   text-align: center;
   padding: 44px;
   border-radius: 29.79px;
-  // min-height: 401px;
+  transition: all .2s ease;
+
+  @media (max-width: 1440px) {
+    right: 6%;
+    padding: 22px;
+    width: 22%;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 
   &__picture {
     margin-bottom: 36px;
@@ -29,6 +38,11 @@
   &__title {
     text-transform: uppercase;
     font-size: 14px;
+
+    @media (max-width: 1440px) {
+      font-size: 12px;
+    }
+
   }
 
 }

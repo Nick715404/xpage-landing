@@ -109,7 +109,7 @@
 
 						<picture class="home-hero-section__picture">
 							<source srcset="./img/3-mobile.webp" media="(orientation: portrait)" />
-							<img class="home-hero-section__image" src="./img/3.webp" alt="" />
+							<img class="home-hero-section__image" src="./img/3.webp" alt="Найди с кем поиграть в баскет" />
 						</picture>
 					</div>
 				</div>
@@ -201,9 +201,11 @@
 										</h3>
 										<span class="unit-item__tag">12 секций по&#160;всему городу</span>
 										<picture class="unit-item__background">
+											<source srcset="./img/sections-mobile.webp" media="(max-width: 490px)" />
 											<img src="./img/sections.webp" alt="Мы собрали секции для детей по всему городу" />
 										</picture>
 									</div>
+
 									<div id="unit-coach" class="unit-options__item unit-item">
 										<h3 class="unit-item__title">
 											Подбери тренера <br />
@@ -287,6 +289,46 @@
 				</div>
 			</section>
 		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__wrapper">
+					<h2 class="footer__title">
+						Еще больше полезных <br />
+						материалов <br />
+						и&#160;видеоуроков <br />
+						в&#160;нашем приложении
+					</h2>
+					<div class="footer__links">
+						<a href="footer__link">
+							<img class="footer__icon" src="./img/applesvg.svg" alt="Download on the App Store" />
+						</a>
+						<a href="footer__link">
+							<img class="footer__icon" src="./img/play-market.svg" alt="Download on the Play Market" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<span class="footer__sign">сделано в&#160;xpage</span>
+			<div class="qr-code">
+				<picture class="qr-code__picture">
+					<img class="qr-code__img" src="./img/qr-code.svg" srcset="./img/qr-code.svg" alt="Qr-code" />
+				</picture>
+				<div class="qr-code__content">
+					<span class="qr-code__tag">iOS / Android</span>
+					<p class="qr-code__title">
+						Наведите камеру устройства на&#160;QR-код, чтобы скачать
+					</p>
+				</div>
+			</div>
+
+			<div class="footer__background footer-bg">
+				<picture class="footer-bg__picture">
+					<source media="(max-width: 490px)" srcset="./img/foorer-ball-mobukd.webp" />
+					<source media="(max-width: 320px) and (max-width: 768px)" srcset="./img/ foorer-ball-mobukd.webp" />
+					<img class="footer-bg__image" src="./img/footer-ball.webp" srcset="" alt="" />
+				</picture>
+			</div>
+		</footer>
 
 		<script src="./js/index.bundle.js"></script>
 	</body>

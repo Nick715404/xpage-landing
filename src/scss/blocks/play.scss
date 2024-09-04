@@ -89,7 +89,7 @@
     }
 
     @media (max-width: 490px) {
-      min-height: 446px;
+      min-height: 470px;
       aspect-ratio: 0.82 / 1;
     }
 
@@ -114,7 +114,7 @@
         }
 
         @media (max-width: 490px) {
-          bottom: 90px;
+          bottom: 70px;
         }
 
       }
@@ -125,6 +125,11 @@
 
       .play-card__link {
         bottom: 24px;
+
+        @media (max-width: 490px) {
+          bottom: 12px;
+        }
+
       }
     }
 
@@ -150,6 +155,7 @@
       @media (max-width: 490px) {
         width: calc(100% - 24px);
         padding: 10px 14px 10px;
+        border-radius: 8px;
       }
 
       &:hover,

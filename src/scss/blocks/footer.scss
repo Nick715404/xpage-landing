@@ -17,15 +17,25 @@
   &__links {
     display: flex;
     gap: 37px;
+
+    @media (max-width: 490px) {
+      flex-direction: column;
+    }
+
   }
 
   &__sign {
     position: absolute;
     bottom: 38px;
     left: 20px;
+    font-size: 12px;
 
     @media (max-width: 1024px) {
       left: 12px;
+    }
+
+    @media (max-width: 490px) {
+      font-size: 10px;
     }
 
   }
@@ -37,6 +47,14 @@
     width: 36%;
     max-width: 991px;
     height: auto;
+    transition: all .2s ease;
+
+    @media (max-width: 490px) {
+      bottom: 59px;
+      width: 50%;
+      max-width: 216px;
+    }
+
   }
 
 }

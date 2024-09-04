@@ -4,10 +4,20 @@
   gap: 20px;
   flex-grow: 1;
 
+  @media (max-width: 1024px) {
+    gap: 8px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #C4C4C4;
+  }
+
   #unit-banner {
     max-height: 611px;
     aspect-ratio: 1.25 / 1;
     position: relative;
+
+    @media (max-width: 1024px) {
+      aspect-ratio: 4 / 1;
+    }
 
     &::after {
       content: '';
@@ -27,6 +37,11 @@
   #unit-coach {
     max-height: 294px;
     aspect-ratio: 0.9 / 1;
+
+    @media (max-width: 1024px) {
+      aspect-ratio: 4 / 1;
+    }
+
   }
 
   .unit-item {
@@ -43,6 +58,7 @@
 
     @media (max-width: 768px) {
       padding: 12px;
+      border-radius: 10px;
     }
 
     &__background {
@@ -99,6 +115,8 @@
 
       @media (max-width: 768px) {
         font-size: 10px;
+        width: 100%;
+        text-align: center;
       }
 
     }
@@ -107,6 +125,12 @@
       font-size: clamp(1.25rem, 0.9rem + 1.75vw, 3rem);
       position: relative;
       z-index: 2;
+
+      @media (max-width: 1440px) {
+        font-size: clamp(1.25rem, 0.9rem + 1.05vw, 2.2rem);
+
+      }
+
     }
 
   }
