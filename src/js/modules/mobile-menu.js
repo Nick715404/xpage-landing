@@ -9,6 +9,7 @@ const navLinks = document.querySelectorAll('.nav__link');
 export const mobileMenuSwitcher = () => {
 	burgerMenuButton.addEventListener('click', () => {
 		mobileMenu.classList.toggle('open');
+		document.body.classList.toggle('hidden');
 		if (mobileMenu.classList.contains('open')) {
 			burgerMenuButtonTextElement.textContent = 'ЗАКРЫТЬ';
 		} else {
@@ -19,6 +20,7 @@ export const mobileMenuSwitcher = () => {
 	burgerMenuButtonMobile.addEventListener('click', () => {
 		mobileMenu.classList.toggle('open');
 		burgerMenuButtonMobile.classList.toggle('active');
+		document.body.classList.toggle('hidden');
 	});
 
 	navLinks.forEach(link => {
