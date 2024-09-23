@@ -12,6 +12,7 @@
   &__title {
     font-size: clamp(1.25rem, 0.9rem + 1.75vw, 3rem);
     margin-bottom: 32px;
+    max-width: 50%;
   }
 
   &__links {
@@ -48,6 +49,7 @@
     max-width: 991px;
     height: auto;
     transition: all .2s ease;
+    max-height: 600px;
 
     @media (max-width: 490px) {
       bottom: 59px;

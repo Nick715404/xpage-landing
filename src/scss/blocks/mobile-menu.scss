@@ -9,7 +9,7 @@
     border-radius: 20px;
     padding: 20px;
     height: calc(90dvh - 20px);
-    max-height: 920px;
+    max-height: 1440px;
     overflow: hidden;
     transform: translateY(-120%);
     transition: all .6s ease;
@@ -59,7 +59,7 @@
   &__picture {
     position: absolute;
     top: 0;
-    right: 90px;
+    right: -5rem;
     width: 20%;
     transition: all .3s ease-in-out;
 

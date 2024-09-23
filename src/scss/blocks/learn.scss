@@ -1,9 +1,4 @@
 .learn {
-  margin-bottom: 120px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 42px;
-  }
 
   &__wrapper {
     background-color: #fff;
@@ -101,7 +96,7 @@
   }
 
   &__blocks {
-    width: 70%;
+    width: 88%;
     display: flex;
 
     @media (max-width: 1024px) {

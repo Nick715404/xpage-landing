@@ -91,6 +91,14 @@
         background-color: #cecece;
       }
     }
+
+    &__name {
+      max-width: 280px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
   }
 }
 

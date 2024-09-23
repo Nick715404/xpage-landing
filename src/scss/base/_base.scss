@@ -29,6 +29,14 @@ main {
 
 }
 
+section {
+	margin-bottom: 120px;
+
+	@media (max-width: 768px) {
+		margin-bottom: 42px;
+	}
+}
+
 .hidden {
 	overflow: hidden;
 }
